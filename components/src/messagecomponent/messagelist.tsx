@@ -17,9 +17,12 @@ export default function Messagelist() {
   return (
     <View>
       <Text>Messages</Text>
+
+      <View className="bg-white rounded-[5px] shadow p-3 self-start max-w-[80%]">
       {messages.map((msg, i) => (
         <Text key={i}>{msg}</Text>
       ))}
+      </View>
     </View>
   );
 }

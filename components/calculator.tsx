@@ -1,39 +1,36 @@
-import { View, Text, Button, TextInput, Pressable } from 'react-native';
+import { View, Text, TextInput, Pressable } from "react-native";
 
-export default function calculator() {
+export default function Calculator() {
   return (
-    <View>
-        <View>
-            <TextInput
-            className="w-4/5 h-12 border border-gray-300 rounded-lg px-3 text-base"
-            placeholder="Type something..."
-            />
-        </View>
-            <CalculatorButton label="1" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="2" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="3" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="4" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="5" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="6" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="7" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="8" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="9" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="+" onPress={() => console.log("Pressed")} />
-            <CalculatorButton label="-" onPress={() => console.log("Pressed")} />
-            {/* action btn */}
-            <CalculatorButton label="1" onPress={() => console.log("Pressed")} />
+    <View className="flex-1 bg-black items-center justify-center p-4">
+      {/* Input Field */}
+      <TextInput
+        className="w-full h-14 bg-white text-black text-lg rounded-lg px-4 mb-6"
+        placeholder="Type something..."
+        placeholderTextColor="#666"
+      />
 
+      {/* Buttons Grid */}
+      <View className="flex-row flex-wrap justify-center gap-3">
+        {["1","2","3","4","5","6","7","8","9","+","-","="].map((label, i) => (
+          <CalculatorButton key={i} label={label} onPress={() => console.log(`Pressed ${label}`)} />
+        ))}
+      </View>
     </View>
   );
 }
 
-function CalculatorButton({ label, onPress, className = "" }) {
+function CalculatorButton({ label, onPress }) {
   return (
     <Pressable
-      onPress={() => console.log("Pressed 1")}
-      className={`bg-blue-500 w-5px items-center justify-center rounded-lg ${className}`}
+      onPress={onPress}
+      className="bg-black border border-white w-16 h-16 items-center justify-center rounded-lg"
     >
-      <Text className="text-white text-[18px] font-bold">{label}</Text>
+      <Text className="text-white text-2xl font-bold">{label}</Text>
     </Pressable>
   );
 }
+
+// also note for the entirety of the project theme is ehite on black 
+// don't complete code just fix the ui
+// remember do not change code context or logic just ui upgrade

@@ -3,40 +3,13 @@
     "name": "my-expo-app",
     "slug": "my-expo-app",
     "version": "1.0.0",
-    
-    
-      "web": {
-        "favicon": "./assets/favicon.png"
-      },
-      
-        "experiments": {
-          "tsconfigPaths": true
-        },
-      
-      "plugins": [
-        [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#232323",
-          "image": "./assets/logo.png",
-          "dark": {
-            "image": "./assets/logo.png",
-            "backgroundColor": "#000000"
-          },  
-          "imageWidth": 200
-        }
-      ]
-      ],
-    
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    
-     "userInterfaceStyle": "light",
-    
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -49,6 +22,26 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
-    }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "experiments": {
+      "tsconfigPaths": true
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#000000",
+          "image": "./assets/logo.png",
+          "dark": {
+            "image": "./assets/logo.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200
+        }
+      ]
+    ]
   }
 }

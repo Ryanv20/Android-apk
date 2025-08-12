@@ -1,26 +1,47 @@
 // Navigation.tsx
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen'
 import calculator from './calculator'
+// import { View, Text, TouchableOpacity } from 'react-native';
 
+//node add image 
+//note upgraded ui
 export function Library({ navigation }: any) {
   return (
-    <>
-    <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-      <Text>Home</Text>
-    </View>
-    <View>
+    <View className="flex-1 bg-black p-6">
+      {/* Title */}
+      <View className="flex-1 items-center justify-center">
+        <Text className="text-white text-3xl font-bold tracking-wide">
+          Home
+        </Text>
+      </View>
 
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home',{id:1})}/>
-      <Button title="Go to calculator" onPress={() => navigation.navigate('calculator',{id:2})}/>
+      {/* Buttons */}
+      <View className="pb-10">
+        <TouchableOpacity
+          className="mb-4 border border-white rounded-full py-3 items-center active:opacity-70"
+          onPress={() => navigation.navigate('Home', { id: 1 })}
+        >
+          <Text className="text-white text-lg font-semibold">
+            Go to Home
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          className="border border-white rounded-full py-3 items-center active:opacity-70"
+          onPress={() => navigation.navigate('calculator', { id: 2 })}
+        >
+          <Text className="text-white text-lg font-semibold">
+            Go to Calculator
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
-    </>
   );
 }
-
 const Stack = createNativeStackNavigator();
 
 export default function Navigation() {
