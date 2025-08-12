@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, TextInput, Button, Pressable } from "react-native";
 import { initSocket, sendMessage } from "../service/socketservice";
 
 export default function Messagesend() {
@@ -17,15 +17,24 @@ export default function Messagesend() {
   };
 
   return (
-    <View>
-      <Text>Send</Text>
+    <View  className="flex-row">
+      
       <TextInput
         className="w-4/5 h-12 border border-gray-300 rounded-lg px-3 text-base"
         placeholder="Type something..."
         value={text}
         onChangeText={setText}
       />
-      <Button title="Send" onPress={handleSend} />
+   
+    <Pressable
+    onPress={handleSend}
+    className="bg-blue-500 w-[70px] px-4 py-2 rounded-lg ml-[10px]"
+    >
+        {/* add img */}
+    <Text className="text-white font-bold">Send</Text>
+    </Pressable>
+    
+
     </View>
   );
 }
