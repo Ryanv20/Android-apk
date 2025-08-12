@@ -1,4 +1,4 @@
-// src/messagecomponent/messagedata.tsx
+//use for local storage
 
 export type Message = {
   id: string;
