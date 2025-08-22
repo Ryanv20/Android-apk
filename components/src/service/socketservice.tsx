@@ -6,16 +6,16 @@ let socket: Socket | null = null;
 let userID: string | null = null; // lowercase 'string'
 // : Socket | null: Type annotation (TypeScript).
 // Socket: The variable can hold an instance of the Socket type (probably from a library like socket.io-client).
-// | null: The variable can also be null, representing no active connection.
+// | null: Tjhe variable can also be null, representing no active connection.
 // = null: The variable is initialized to null, meaning there is no socket connection at the star
-
+ 
 export const initSocket = () => {
   if (!socket) {
     socket = io(SERVER_URL, { transports: ["websocket"] });
     socket.on("connect", () => {
     console.log(" Connected baby lets go Mr/Mrs:", socket?.id);
     userID = socket?.id;
-    console.log("user id is :", userID);
+    console.log("Contact is :", userID);
     });
     
     socket.on("disconnect", () => console.log(" Disconnected"));

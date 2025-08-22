@@ -17,7 +17,7 @@ let userID = getUserID();
   return (
     <View>
             <View className="bg-white rounded-[5px] mt-2 shadow p-3 self-start max-w-[80%]">
-                      <View>${userID}</View>
+                      <View> <Text>Your UserID: </Text>{userID}</View>
 
             <View className="space-y-4">
                 {messages.map((msg, i) => (
