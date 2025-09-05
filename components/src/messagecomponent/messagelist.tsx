@@ -2,18 +2,20 @@ import { useState, useEffect } from "react";
 import { View, Text } from "react-native";
 import { initSocket, onMessageReceived, getUserID } from "../service/socketservice"
 
-export default function Messagelist() {
+  export default function Messagelist() {
   const [messages, setMessages] = useState<string[]>([]);
 
   useEffect(() => {
-    initSocket(); // starts connect funct should add to home page
+  initSocket(); // starts connect funct should add to home page
 
-    // Listen for msg(s) from server
-    onMessageReceived((msg) => {
+      // Listen for msg(s) from server
+      onMessageReceived((msg) => {
       setMessages((prev) => [...prev, msg]);
     });
   }, []);
-let userID = getUserID();
+  let userID = getUserID();
+
+ 
   return (
     <View>
             <View className="bg-white rounded-[5px] mt-2 shadow p-3 self-start max-w-[80%]">
