@@ -1,6 +1,6 @@
 import { View, Text, TextInput, Pressable } from "react-native";
-import ProfileData from "./src/profileComponents/profileData"
-import SearchUser from "./src/profileComponents/searchpage";
+import ProfileData from "../profileComponents/profileData"
+import SearchUser from "../profileComponents/searchbar";
 
 export default function Calculator() {
   return (

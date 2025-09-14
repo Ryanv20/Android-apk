@@ -4,10 +4,9 @@ import { View, Text, Button, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './chatScreen'
-import ProfileScreen from './ProfileScreen'
+import ProfileScreen from './src/pages/ProfileScreen'
 
 // import { View, Text, TouchableOpacity } from 'react-native';
-
 //node add image 
 //note upgraded ui
 export function Library({ navigation }: any) {
@@ -27,7 +26,7 @@ export function Library({ navigation }: any) {
           onPress={() => navigation.navigate('Home', { id: 1 })}
         >
           <Text className="text-white text-lg font-semibold">
-            Go to Home
+            Go to chats
           </Text>
         </TouchableOpacity>
 
