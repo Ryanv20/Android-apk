@@ -14,7 +14,7 @@ export const initSocket = () => {
     socket = io(SERVER_URL, { transports: ["websocket"] });
     socket.on("connect", () => {
     console.log(" Connected baby lets go Mr/Mrs:", socket?.id);
-    userID = socket?.id;
+    let userID = socket?.id;
     console.log("Contact is :", userID);
     });
     

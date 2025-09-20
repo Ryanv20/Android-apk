@@ -1,10 +1,11 @@
  import './global.css';
 // import Container from 'components/Container';
-import Navigation from './components/Navigation'
+import DefaultPage from './components/DefaultPage'
+import WelcomePage from 'components/WelcomePage';
 export default function App() {
   return (
     <>
-    <Navigation />
+    <DefaultPage />
     </>
   );
 }
